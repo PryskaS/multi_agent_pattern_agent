@@ -32,24 +32,24 @@ This project implements the key phases of an MLOps pipeline for custom model cre
 ```mermaid
 graph TD
     subgraph "Início do Processo"
-        A[User Input: Blog Topic] --> B(FastAPI Endpoint /generate);
+        A["User Input: Blog Topic"] --> B("FastAPI Endpoint /generate");
     end
 
     subgraph "Crew Orchestration"
-        B --> C{Orchestrator Agent (Crew)};
-        C -- Assigns Task --> D[Agent: Research Manager];
-        D -- Uses Tool --> E[Tool: Internet Search];
+        B --> C{"Orchestrator Agent (Crew)"};
+        C -- "Assigns Task" --> D["Agent: Research Manager"];
+        D -- "Uses Tool" --> E["Tool: Internet Search"];
         E --> D;
-        D -- Output --> F[Agent: Content Creator];
-        F -- Output --> G[Agent: SEO Expert];
-        G -- Output --> H[Agent: Critic/Editor];
-        H -- Feedback/Refines --> F;
-        H -- Final Output --> I[Final Blog Post];
+        D -- Output --> F["Agent: Content Creator"];
+        F -- Output --> G["Agent: SEO Expert"];
+        G -- Output --> H["Agent: Critic/Editor"];
+        H -- "Feedback/Refines" --> F;
+        H -- "Final Output" --> I["Final Blog Post"];
     end
 
     subgraph "Fim do Processo"
         I --> B;
-        B --> J[User Output: JSON Response];
+        B --> J["User Output: JSON Response"];
     end
 ```
 
